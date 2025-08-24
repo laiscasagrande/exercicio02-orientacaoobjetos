@@ -5,8 +5,8 @@ import java.util.ArrayList;
 
 public class Main {
     public static void main(String[] args) {
-        Exercicio01();
-        //Exercicio02();
+        //Exercicio01();
+        Exercicio02();
         //Exercicio03();
     }
 
@@ -18,7 +18,14 @@ public class Main {
     }
 
     public static void Exercicio02() {
+        String[] nomes = {"Cristiano", "Neymar", "Lionel"};
+        String[] sobrenomes = {"Ronaldo", "Júnior", "Messi"};
+        String[] posicoes = {"zagueiro", "atacante", "goleiro"};
+        String[] clubes = {"Flamengo", "Corinthias", "Palmeiras"};
 
+        GeradorJogador geradorJogador = new GeradorJogador(nomes, sobrenomes, posicoes, clubes);
+
+        System.out.println(geradorJogador.getJogador());
     }
 
     public static void Exercicio03() {
