@@ -4,39 +4,27 @@ import java.util.Random;
 
 
 public class GeradorPokemon {
-    String[] nomesPokemon =  {};
-    String[] tiposPokemon = {};
-    String[] pokemonsGerados =  {};
-
     Random PokemonAleatorio = new Random();
     Scanner scanner = new Scanner(System.in);
 
     String nome;
     String tipo;
+    Short nivel;
 
-    GeradorPokemon() {
+    GeradorPokemon(String[] nomesPokemon, String[] tiposPokemon) {
         System.out.print("Quantos pokemons você deseja gerar? ");
         Integer quantidadePokemonDesejada = scanner.nextInt();
 
-        while(pokemonsGerados.length > quantidadePokemonDesejada){
-            int nome = PokemonAleatorio.nextInt(nomesPokemon.length);
-            int tipo = PokemonAleatorio.nextInt(tiposPokemon.length);
+        for (int i = 0; i < quantidadePokemonDesejada; i++) {
+            int nomeAleatorio = PokemonAleatorio.nextInt(nomesPokemon.length);
+            int tipoAleatorio = PokemonAleatorio.nextInt(tiposPokemon.length);
+            Short nivel = (short) PokemonAleatorio.nextInt(1, 100);
 
-            this.nome = nomesPokemon[nome];
-            this.tipo = tiposPokemon[tipo];
+            this.nome = nomesPokemon[nomeAleatorio];
+            this.tipo = tiposPokemon[tipoAleatorio];
+            this.nivel = nivel;
 
-
+            System.out.println(nome + " é um Pokémon do tipo " + tipo + " de nível " + nivel);
         }
     }
-
-
-
-    int nome = PokemonAleatorio.nextInt(nomesPokemon.size());
-    int tipo = PokemonAleatorio.nextInt(tiposPokemon.size());
-    int nivel = PokemonAleatorio.nextInt(100) + 1;
-
-    String nomeGeradoAleatoriamente = nomesPokemon.get(nome);
-    String tipoGeradoAleatoriamente = tiposPokemon.get(tipo);
-
-       // System.out.println(nomeGeradoAleatoriamente + " é um Pokémon do tipo " + tipoGeradoAleatoriamente + " de nível " + nivel);
 }

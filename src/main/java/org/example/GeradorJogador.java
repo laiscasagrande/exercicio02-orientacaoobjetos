@@ -3,11 +3,6 @@ package org.example;
 import java.util.Random;
 
 public class GeradorJogador {
-    String[] nomes = {};
-    String[] sobrenomes = {};
-    String[] posicoes = {};
-    String[] clubes = {};
-
     String nome;
     String sobrenome;
     String clube;
